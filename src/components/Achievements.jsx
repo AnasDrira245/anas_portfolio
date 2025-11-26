@@ -13,6 +13,7 @@ const groups = [
   {
     place: "First Place",
     badge: "1st",
+    color: "from-yellow-400 to-yellow-600",
     description: "Top finishes across major national competitions.",
     items: [
       { src: trcFirst, title: "TRC", caption: "TRC — First Place", alt: "Anas — TRC First Place" },
@@ -23,6 +24,7 @@ const groups = [
   {
     place: "Second Place",
     badge: "2nd",
+    color: "from-gray-300 to-gray-500",
     description: "Strong runner-up performances with memorable moments.",
     items: [
       { src: crackcodeSecond, title: "CrackCode", caption: "CrackCode — Second Place", alt: "Anas — CrackCode Second Place" },
@@ -33,6 +35,7 @@ const groups = [
   {
     place: "Third Place",
     badge: "3rd",
+    color: "from-orange-400 to-orange-600",
     description: "Consistent podium finishes across events.",
     items: [
       { src: helloworldThird, title: "HelloWorld", caption: "HelloWorld — Third Place", alt: "Anas — HelloWorld Third Place" },
@@ -64,53 +67,70 @@ export default function Achievements() {
   }
 
   return (
-    <section id="achievements" className="py-12 px-4">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6">
-        <motion.h2 className="text-3xl font-extrabold mb-6" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-          Achievements
-        </motion.h2>
+    <section id="achievements" className="py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Key <span className="text-gradient">Achievements</span></h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Selected podium photos — hover a card for a quick peek, click to open full view.
+          </p>
+        </motion.div>
 
-        <motion.p className="text-gray-600 dark:text-gray-300 mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.05 }}>
-          Selected podium photos — hover a card for a quick peek, click to open full view.
-        </motion.p>
-
-        <div className="space-y-8">
+        <div className="space-y-12">
           {groups.map((g, gi) => (
             <div key={g.place}>
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-xl font-semibold">{g.place}</h3>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">{g.description}</div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
+                    {g.place}
+                    <span className={`text-sm px-3 py-1 bg-gradient-to-r ${g.color} text-white rounded-full font-medium shadow-lg`}>
+                      {g.badge}
+                    </span>
+                  </h3>
+                  <div className="text-gray-600 dark:text-gray-400 mt-1">{g.description}</div>
                 </div>
-                <div className="text-sm px-3 py-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full font-medium">{g.badge}</div>
               </div>
 
-              <div className="overflow-x-auto">
-                <motion.div className="flex gap-4 pb-2" initial="hidden" animate="show" variants={{
-                  hidden: {},
-                  show: { transition: { staggerChildren: 0.08 } }
-                }}>
+              <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+                <motion.div
+                  className="flex gap-6"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: {},
+                    show: { transition: { staggerChildren: 0.1 } }
+                  }}
+                >
                   {g.items.map((it, idx) => {
                     const globalIndex = flat.findIndex((f) => f.src === it.src && f.title === it.title);
                     return (
                       <motion.button
                         key={it.title + idx}
                         onClick={() => openAt(globalIndex)}
-                        className="group w-64 flex-shrink-0 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow hover:shadow-lg transition-shadow bg-gray-50 dark:bg-gray-900 focus:outline-none"
-                        whileHover={{ y: -6, scale: 1.02 }}
+                        className="group w-72 flex-shrink-0 rounded-2xl overflow-hidden glass-card hover:border-cosmic-purple/30 transition-all focus:outline-none"
+                        whileHover={{ y: -6 }}
                         whileTap={{ scale: 0.98 }}
                         variants={{
-                          hidden: { opacity: 0, y: 12 },
-                          show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } }
+                          hidden: { opacity: 0, x: 20 },
+                          show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
                         }}
                       >
-                        <div className="relative w-full h-40">
-                          <img src={it.src} alt={it.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                          <div className="absolute left-3 top-3 bg-white/80 dark:bg-black/60 text-xs px-2 py-1 rounded-lg font-semibold">{g.badge}</div>
+                        <div className="relative w-full h-48 overflow-hidden">
+                          <img src={it.src} alt={it.alt} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className={`absolute top-3 left-3 bg-gradient-to-r ${g.color} text-white text-xs px-2 py-1 rounded-lg font-bold shadow-lg`}>
+                            {g.badge}
+                          </div>
                         </div>
-                        <div className="p-3 text-left">
-                          <div className="font-medium text-gray-900 dark:text-gray-100">{it.title}</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">{it.caption}</div>
+                        <div className="p-4 text-left">
+                          <div className="font-bold text-gray-900 dark:text-white mb-1">{it.title}</div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400">{it.caption}</div>
                         </div>
                       </motion.button>
                     );
@@ -123,45 +143,50 @@ export default function Achievements() {
 
         <AnimatePresence>
           {open && (
-            <motion.div className="fixed inset-0 z-50 flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <div className="absolute inset-0 bg-black/70" onClick={() => setOpen(false)} />
-              <div className="relative max-w-4xl w-full mx-4 p-4">
-                <motion.div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-2xl" initial={{ y: 20, scale: 0.98 }} animate={{ y: 0, scale: 1 }} exit={{ y: 10, scale: 0.98 }}>
-                  <div className="flex items-center gap-4">
-                    <button
-                      onClick={() => setCurrentIndex((i) => (i - 1 + flat.length) % flat.length)}
-                      className="p-4 text-2xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                      aria-label="Previous"
-                    >
-                      ‹
-                    </button>
-
-                    <div className="flex-1 p-4">
-                      <img src={flat[currentIndex].src} alt={flat[currentIndex].alt} className="w-full h-auto max-h-[70vh] object-contain bg-black" />
-                      <div className="mt-4">
-                        <div className="text-xl font-semibold text-gray-900 dark:text-gray-100">{flat[currentIndex].title}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-300">{flat[currentIndex].caption} • {flat[currentIndex].place}</div>
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => setCurrentIndex((i) => (i + 1) % flat.length)}
-                      className="p-4 text-2xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                      aria-label="Next"
-                    >
-                      ›
-                    </button>
-                  </div>
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+            >
+              <motion.div
+                className="relative max-w-5xl w-full bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative aspect-video bg-black flex items-center justify-center">
+                  <img src={flat[currentIndex].src} alt={flat[currentIndex].alt} className="max-w-full max-h-full object-contain" />
 
                   <button
-                    aria-label="Close"
+                    onClick={(e) => { e.stopPropagation(); setCurrentIndex((i) => (i - 1 + flat.length) % flat.length); }}
+                    className="absolute left-4 p-3 rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setCurrentIndex((i) => (i + 1) % flat.length); }}
+                    className="absolute right-4 p-3 rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors"
+                  >
+                    ›
+                  </button>
+                </div>
+
+                <div className="p-6 flex justify-between items-start gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{flat[currentIndex].title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400">{flat[currentIndex].caption}</p>
+                  </div>
+                  <button
                     onClick={() => setOpen(false)}
-                    className="absolute top-4 right-4 bg-white/70 dark:bg-gray-800/60 rounded-full p-2 hover:bg-white dark:hover:bg-gray-800"
+                    className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   >
                     ✕
                   </button>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

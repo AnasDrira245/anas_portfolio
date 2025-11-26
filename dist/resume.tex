@@ -1,0 +1,139 @@
+%% Resume LaTeX source exported to allow download/compile
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\geometry{left=0.7cm,right=0.7cm,top=0.7cm,bottom=0.7cm,columnsep=0.7cm}
+
+\usepackage{paracol}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+\ifxetexorluatex
+  \setmainfont{Lato}
+\else
+  \usepackage[default]{lato}
+\fi
+
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+
+\colorlet{headingrule}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+\input{pubs-num.tex}
+\addbibresource{sample.bib}
+\newcommand{\codeforces}[1]{\href{https://codeforces.com/profile/#1}{\faCode\ #1}}
+
+\begin{document}
+
+\name{Mohamed Anas Drira}
+\tagline{Software Engineering Student}
+\personalinfo{
+  \email{anas.drira2011@gmail.com}
+  \location{Sfax, Tunisia}
+  \phone{+216 94 411 737}
+  \linkedin{anas-drira-6883b1219}
+  \github{AnasDrira245}
+  \codeforces{skled}
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+\columnratio{0.55}
+\begin{paracol}{2}
+
+\cvsection{About Me}
+Software Engineering student passionate about AI, problem-solving, and building smart systems. I’ve worked on projects from AI agents that generate and execute code to full-stack applications with \\ FastAPI and Angular. I’ve developed strong algorithmic thinking skills and mastered C++, gaining a deep understanding of \\
+its concepts and efficient use in solving complex problems.
+
+\cvsection{Experience}
+
+\cvevent{\textbf{Coding Betounsi}: Software Engineer Intern}{Python, Angular, FastAPI, PostgreSQL, Git/GitHub, Debugging}{June 2025 -- September 2025}{}
+\begin{itemize}[leftmargin=*]
+    \item Debugged and reverse-engineered a payroll management system,\\identifying and resolving bugs in data validation and UI components.
+    \item Developed the CNSS generation module, implementing UX/UI \\ for generating and managing social security files.
+    \item Collaborated on refactoring the prime system, implementing date-based variant history to replace period structures and conducting code reviews.
+\end{itemize}
+
+
+\cvevent{\textbf{KPIT (Primatec Engineering)}: Ai Intern}{Python, LLamaindex , LLM Prompt Engineering, MistalAi}{July 2024 -- September 2024}{}
+\begin{itemize}
+    \item Developed a multi-language AI code generation agent supporting Python, C++, Java, and JavaScript using Streamlit for a responsive web interface.
+    \item Integrated LlamaIndex with MistralAI to provide context-aware code generation, enabling the agent to respond accurately to user prompts.
+    \item Implemented code execution and download features, allowing users to run and save the generated code directly from the interface.
+\end{itemize}
+
+\cvsection{Projects}
+
+\cvevent{Point of Sale (POS) System  \href{https://github.com/AnasDrira245/PointOfSale}{\faGithub} }{Angular, FastAPI, SQLAlchemy, OAuth2}{2025}{}
+\begin{itemize}
+    \item Developed a full-stack POS application integrating secure authentication, employee management, and inventory tracking with robust error handling.
+    \item Enhanced maintainability through code reviews, added email integration, and designed a scalable system with pagination and a detailed ERD.
+\end{itemize}
+
+
+\cvevent{SmartBot: Game Automation}{Python, OpenCV, PyAutoGUI, YOLOv4-tiny}{2024}{}
+\begin{itemize}
+    \item Collected and labeled game image datasets, trained a YOLOv4-tiny model, and implemented real-time object detection for automated gameplay.
+    \item Developed automated task execution using mouse/keyboard control and OpenCV template matching for precise in-game actions.
+\end{itemize}
+
+
+\cvsection{Achievements}
+
+\cvevent{First Place (\href{https://www.linkedin.com/posts/iheb-dhouib-8b248a192_ai-hackathon-techresolve-activity-7317472366249316353-48yO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcNuYgBo0uX4Y4a9by3NJOZU4NQ_JN-ktk}{\underline{Tech Resolve Challenge}},\href{https://www.linkedin.com/posts/mahdi-chaaben-dev_competitiveprogramming-problemset-coding-ugcPost-7178157209955037184-qT20?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADcNuYgBo0uX4Y4a9by3NJOZU4NQ_JN-ktk} {\underline{SOLVEIT1}}, \href{https://www.linkedin.com/posts/anas-drira-6883b1219_solveit-backtobackchampion-hackjam-activity-7320867837332393984-uxut?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcNuYgBo0uX4Y4a9by3NJOZU4NQ_JN-ktk}{\underline{SOLVEIT2}})}{}{}{}
+
+\cvevent{Second Place (\href{https://www.linkedin.com/posts/mahdi-chaaben-dev_competitiveprogramming-problemset-coding-ugcPost-7178157209955037184-qT20?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcNuYgBo0uX4Y4a9by3NJOZU4NQ_JN-ktk}{\underline{Shinobi}},\href{https://www.linkedin.com/posts/mohamed-aziz-ben-amar_hackathon-crackcode-problemsolving-ugcPost-7301966439375134722-0iZV?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcNuYgBo0uX4Y4a9by3NJOZU4NQ_JN-ktk} {\underline{CrackCode}})}{}{}{}
+
+\cvevent{Third Place (\href{https://www.linkedin.com/posts/mahdi-chaaben-dev_ieeeabrcsabrenisabrsbc-competitiveprogramming-ugcPost-7198457769555820545-gYWF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcNuYgBo0uX4Y4a9by3NJOZU4NQ_JN-ktk}{\underline{Hello World 4.0}},\href{https://www.facebook.com/photo?fbid=122182282460116474&set=pcb.122182282574116474}{\underline{CodeBreaker}})}{}{}{}
+
+
+\switchcolumn
+
+\cvsection{Education}
+
+\cvevent{Higher Institute of Computer Science And Multimedia (ISIMS)}{}{2023 -- 2026}{}
+Engineer's Degree in Computer Science
+
+\cvevent{Higher Institute of Computer Science And Multimedia (ISIMS)}{}{2021 -- 2023}{}
+Pre-Engineering
+
+\cvevent{Monji Slim High School, Sfax}{}{2017 -- 2021}{}
+Mathematics Baccalaureate
+
+\cvsection{Skills}
+\textbf{Technical:}\\
+Python | C/C++ | Java | C\#/.NET  \\
+LLM Prompt Engineering | Information Retrieval \\
+Problem Solving | Graph Theory | Debugging \\
+Docker | Git/Github\\
+Object-Oriented Programming | Modeling \\
+Software Testing\\
+
+\divider
+
+\textbf{Languages:}
+\begin{itemize}
+    \item Arabic (Native)
+    \item English (Full Professional)
+    \item French (Limited Professional)
+\end{itemize}
+
+\cvsection{Certificates}
+\cvevent{Facebook Hacker Cup Qualified Round 2 \href{https://www.facebook.com/codingcompetitions/hacker-cup/2023/certificate/257834442854828}{\faLink}}{Meta}{October 2023}{}
+\cvevent{Problem Solving (Intermediate) Certificate \href{https://www.hackerrank.com/certificates/f5acd5607813}{\faLink}}{HackerRank}{June 2024}{}
+\cvevent{Certificate  of Achievement TCPC \href{https://drive.google.com/file/d/1d6iYsKKQsDb5Rui2k32yzWA_MDkmUne3/view?usp=sharing}{\faLink}}{ICPC}{July 2025}{}
+
+\cvsection{Community Involvement}
+\cvevent{IEEE ISIMS Student Branch: Member}{}{2021 -- 2025}{}
+\cvevent{ISIMS CPC: Trainer in the Problem Solving Department}{}{2023 -- Ongoing}{}
+\end{paracol}
+
+\end{document}

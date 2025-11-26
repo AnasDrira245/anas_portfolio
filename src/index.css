@@ -1,39 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-starlight-white text-gray-900 dark:bg-space-black dark:text-starlight-white transition-colors duration-300;
+  }
+  ::selection {
+    @apply bg-cosmic-purple text-white;
+  }
+}
+
 @layer components {
-	.float-slow {
-		animation: float 6s ease-in-out infinite;
-	}
+  .glass-card {
+    @apply bg-white/70 dark:bg-void-gray/40 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-xl;
+  }
 
-	.sparkle {
-		position: relative;
-	}
+  .glass-nav {
+    @apply bg-white/80 dark:bg-space-black/80 backdrop-blur-md border-b border-gray-200/50 dark:border-white/5;
+  }
 
-	.sparkle::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(120deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
-		pointer-events: none;
-		mix-blend-mode: overlay;
-		opacity: 0;
-		transition: opacity .35s ease;
-	}
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cosmic-purple to-nebula-blue;
+  }
 
-	.sparkle:hover::after {
-		opacity: 1;
-	}
+  .btn-primary {
+    @apply px-6 py-2.5 rounded-full bg-gradient-to-r from-cosmic-purple to-nebula-blue text-white font-medium 
+    hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-0.5;
+  }
 
-	.glass-card {
-		background: rgba(255,255,255,0.6);
-		backdrop-filter: blur(6px);
-	}
-
-	@keyframes float {
-		0% { transform: translateY(0px); }
-		50% { transform: translateY(-6px); }
-		100% { transform: translateY(0px); }
-	}
+  .btn-outline {
+    @apply px-6 py-2.5 rounded-full border border-gray-200 dark:border-gray-700 font-medium
+    hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300;
+  }
 }
