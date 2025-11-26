@@ -3,11 +3,18 @@ import { motion } from "framer-motion";
 export default function Certificates() {
   const certs = [
     {
-      title: "Facebook Hacker Cup Qualified Round 2",
+      title: "Facebook Hacker Cup — Round 2 Qualifier",
       issuer: "Meta",
-      date: "Oct 2023",
-      link: "https://www.facebook.com/codingcompetitions/hacker-cup/2023/certificate/257834442854828",
+      date: "Oct 2025",
+      link: "https://www.facebook.com/codingcompetitions/hacker-cup/2025/certificate/257834442854828",
       icon: "🏆"
+    },
+    {
+      title: "TCPC Achievement",
+      issuer: "ICPC",
+      date: "Jul 2025",
+      link: "https://drive.google.com/file/d/1d6iYsKKQsDb5Rui2k32yzWA_MDkmUne3/view?usp=sharing",
+      icon: "🏅"
     },
     {
       title: "Problem Solving (Intermediate)",
@@ -17,11 +24,11 @@ export default function Certificates() {
       icon: "⭐"
     },
     {
-      title: "TCPC Achievement",
-      issuer: "ICPC",
-      date: "Jul 2025",
-      link: "https://drive.google.com/file/d/1d6iYsKKQsDb5Rui2k32yzWA_MDkmUne3/view?usp=sharing",
-      icon: "🏅"
+      title: "Facebook Hacker Cup Qualified Round 2",
+      issuer: "Meta",
+      date: "Oct 2023",
+      link: "https://www.facebook.com/codingcompetitions/hacker-cup/2023/certificate/257834442854828",
+      icon: "📜"
     },
   ];
 

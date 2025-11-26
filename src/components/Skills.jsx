@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 export default function Skills() {
 	const skills = [
 		{ name: "C++", level: 90 },
-		{ name: "Python", level: 85 },
-		{ name: "JavaScript", level: 75 },
-		{ name: "FastAPI", level: 80 },
-		{ name: "React", level: 70 },
-		{ name: "Mistral AI", level: 60 },
-		{ name: "LlamaIndex", level: 65 },
-		{ name: "Computer Vision", level: 70 },
-		{ name: "Git", level: 80 },
-		{ name: "Linux", level: 75 },
+		{ name: "Python", level: 90 },
+		{ name: "Java", level: 75 },
+		{ name: "C# / .NET", level: 70 },
+		{ name: "FastAPI", level: 85 },
+		{ name: "Angular", level: 75 },
+		{ name: "Docker", level: 70 },
+		{ name: "Git / GitHub", level: 85 },
+		{ name: "LLM Prompting", level: 80 },
+		{ name: "Problem Solving", level: 90 },
 	];
 
 	return (
