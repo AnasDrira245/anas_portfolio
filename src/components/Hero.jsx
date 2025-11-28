@@ -8,7 +8,7 @@ const nameVariant = {
 
 export default function Hero() {
 	return (
-		<section className="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+		<section id="hero" className="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
 			<div className="max-w-7xl mx-auto px-6 w-full relative z-10">
 				<div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20">
 
